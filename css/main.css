@@ -1,0 +1,303 @@
+/*公共类*/
+.clearfix:before, .clearfix:after{
+    content: '';
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+ul{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+i{
+    font-style: normal;
+}
+
+button{
+    border: 0;
+    padding: 10px 40px;
+    background-color: #569597;
+    color: #eee;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+h1,h2{
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+
+.hr{
+    width: 100%;
+    border-bottom: 2px solid #fff;
+    margin: 20px auto;
+}
+
+
+.sub-heading{
+    line-height: 30px;
+    margin: 10px;
+    letter-spacing: 1px;
+}
+
+
+
+/*---main---*/
+
+.main-wrapper{
+    background: url(../img/banner.jpg) no-repeat right center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI',"Microsoft YaHei", Helvetica, Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+nav {
+    height: 50px;
+    background:rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: 700;
+    float: left;
+    letter-spacing: 1px;
+    padding-left: 10px;
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+
+}
+
+nav ul li, nav .logo{
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+nav ul li a{
+    display: inline-block;
+    line-height: 48px;
+    height: inherit;
+}
+
+ul li a:hover, ul li a.active{
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+#banner{
+    height: 700px;
+    position: relative;
+    letter-spacing: 2px;
+
+}
+
+#banner .inner{
+    max-width:300px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 160px;
+}
+
+#banner .inner button{
+    margin-top: 30px;
+}
+
+#banner .inner .more{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+
+.inner .more i{
+    display: block;
+    margin: 30px;
+    cursor: pointer;
+}
+
+
+
+.green-section{
+    background-color: #269D81;
+    text-align: center;
+    padding: 100px;
+
+}
+
+
+
+.wrapper{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.wrapper .hr{
+    width: 60%;
+    border-bottom-color: rgba(0,0,0,0.05);
+}
+.icon-group{
+    padding: 20px;
+}
+
+.icon{
+    display: inline-block;
+    width:60px;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    transform: rotate(45deg);
+    margin: 15px;
+    vertical-align: baseline;
+}
+
+
+
+.blue-section{
+    background-color: #023548;
+}
+
+.article-preview:nth-child(odd) {
+    background: rgba(0,0,0,0.1);
+}
+
+.article-preview > div{
+    float: left;
+    font-size: 0;
+}
+
+.article-preview .img-section{
+    width: 45%;
+}
+
+.img-section img{
+    width: 100%;
+}
+
+.text-section{
+    width: 55%;
+    position: relative;
+    top: 120px;
+    left: 50px;
+}
+
+.text-section > *{
+    max-width: 90%;
+}
+
+.text-section h2{
+    font-size:18px;
+
+}
+
+.text-section p{
+    font-size: 16px;
+}
+
+
+.purple-section{
+    background-color: #036564;
+    text-align: center;
+    padding: 30px;
+}
+
+.heading-wrapper{
+}
+
+
+.heading-wrapper .hr{
+    width: 60%;
+}
+
+.heading-wrapper p{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.card-group{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    float: left;
+    width: 50%;
+    min-height: 300px;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+
+.card:first-child{
+    background: rgba( 0, 0, 0, 0.05);
+}
+
+.card:nth-child(2){
+    background: rgba( 0, 0, 0, 0.10);
+}
+
+
+.card:nth-child(3){
+    background: rgba( 0, 0, 0, 0.15);
+}
+
+.card:nth-child(4){
+    background: rgba( 0, 0, 0, 0.20);
+}
+
+.card:nth-child(5){
+    background: rgba( 0, 0, 0, 0.25);
+}
+.card:nth-child(6){
+    background: rgba( 0, 0, 0, 0.30);
+}
+
+footer{
+    height: 600px;
+    text-align: center;
+    background: url(../img/banner.jpg) left bottom fixed;
+    position: relative;
+}
+
+
+
+footer .inner{
+    position: absolute;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    background: rgba(0,0,0,0.08);
+
+}
+
+footer .share-group{
+    list-style: none;
+    padding: 60px;
+}
+
+.share-group li{
+    display: inline-block;
+    padding: 10px;
+
+}
+
+
