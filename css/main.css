@@ -40,7 +40,8 @@ h1,h2{
 
 .hr{
     width: 100%;
-    border-bottom: 2px solid #fff;
+    height: 2px;
+    background: #fff;
     margin: 20px auto;
 }
 
@@ -91,13 +92,16 @@ nav ul li, nav .logo{
     text-align: center;
 }
 
+
+
+
 nav ul li a{
     display: inline-block;
-    line-height: 48px;
+    line-height: 50px;
     height: inherit;
 }
 
-ul li a:hover, ul li a.active{
+ul li a:hover,nav ul li.active {
     border-bottom: 1px solid #ccc;
 }
 
@@ -155,7 +159,7 @@ ul li a:hover, ul li a.active{
 
 .wrapper .hr{
     width: 60%;
-    border-bottom-color: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.05);
 }
 .icon-group{
     padding: 20px;
@@ -187,7 +191,7 @@ ul li a:hover, ul li a.active{
     font-size: 0;
 }
 
-.article-preview .img-section{
+.article-preview .img-section {
     width: 45%;
 }
 
@@ -299,5 +303,37 @@ footer .share-group{
     padding: 10px;
 
 }
+
+
+#sidebar{
+    position: fixed;
+    top:0;
+    right:0;
+    height: 100%;
+    width: 300px;
+    background: #1E8A7D;
+    letter-spacing: 2px;
+    display: none;
+}
+
+#sidebar ul{
+    list-style: none;
+    padding: 45px 30px;
+}
+#sidebar ul li{
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #1D9D92;
+
+}
+
+#sidebar i{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+}
+
 
 
