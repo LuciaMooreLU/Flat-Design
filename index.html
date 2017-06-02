@@ -41,15 +41,48 @@
                 }
             }
 
-            sidebar.onclick= function () {
-                if (sidebar.style.display = "block")
+            // 更换背景
+            var mainbg = document.getElementById("main-wrapper");
+            var footbg = document.getElementById("footbg");
+
+            var sele = document.getElementById("sele");
+
+            sele.onchange = function () {
+                switch(this.value){
+                    case "1":
+                        mainbg.style.backgroundImage ="url(img/banner1.jpg)";
+                        footbg.style.backgroundImage ="url(img/banner1.jpg)";
+                        break;
+
+                    case "2":
+                        mainbg.style.backgroundImage ="url(img/banner2.jpg)";
+                        footbg.style.backgroundImage ="url(img/banner2.jpg)";
+                        break;
+
+                    case "3":
+                        mainbg.style.backgroundImage ="url(img/banner3.jpg)";
+                        footbg.style.backgroundImage ="url(img/banner3.jpg)";
+                        break;
+
+                    case "4":
+                        mainbg.style.backgroundImage ="url(img/banner4.jpg)";
+                        footbg.style.backgroundImage ="url(img/banner4.jpg)";
+                        break;
+
+                    default:
+                        mainbg.style.backgroundImage ="url(img/banner.jpg)";
+                        footbg.style.backgroundImage ="url(img/banner.jpg)"
+                }
             }
+
+
+            
         }
     </script>
 </head>
 <body>
 
-<div class="main-wrapper">
+<div id="main-wrapper">
     <!-- HEADER-->
     <header>
         <nav>
@@ -65,12 +98,22 @@
                     <a href="#">文章</a>
                 </li>
                 <li>
-                    <a href="#">图片</a>
+                    <a href="#">背景</a>
                 </li>
                 <li>
                     <a href="#">更多</a>
                 </li>
             </ul>
+            
+            <div id="bg">
+                <select name="" id="sele" >
+                    <option value="0">BG TEST</option>
+                    <option value="1">bg one</option>
+                    <option value="2">bg two</option>
+                    <option value="3">bg three</option>
+                    <option value="4">bg four</option>
+                </select>
+            </div>
         </nav>
 
         <div id="banner" class="clearfix">
@@ -122,10 +165,18 @@
                     <img src="img/pic01.jpg" alt="">
                 </div>
                 <div class="text-section">
-                    <h2>标题标题</h2>
+                    <h2>TOOL LIST</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, accusantium aperiam
                         asperiores consequuntur dolores esse et explicabo laboriosam maiores mollitia quam qui quod
                         repellendus reprehenderit soluta suscipit totam voluptate!</p>
+
+                    <span class="qr">
+                        <s class="cricle">
+                            <i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>
+                        </s>
+                    </span>
+
+
                 </div>
             </div>
 
@@ -137,6 +188,12 @@
                         placeat
                         repellendus repudiandae! Asperiores corporis doloribus iste molestias mollitia quis sapiente
                         similique! Blanditiis dignissimos eveniet ipsa omnis.</p>
+
+                    <span class="qr">
+                        <s class="cricle">
+                            <i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>
+                        </s>
+                    </span>
                 </div>
 
                 <div class="img-section">
@@ -149,10 +206,13 @@
                     <img src="img/pic03.jpg" alt="">
                 </div>
                 <div class="text-section">
-                    <h2>标题标题</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, accusantium aperiam
-                        asperiores consequuntur dolores esse et explicabo laboriosam maiores mollitia quam qui quod
-                        repellendus reprehenderit soluta suscipit totam voluptate!</p>
+
+                        <h2>标题标题</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, accusantium aperiam
+                            asperiores consequuntur dolores esse et explicabo laboriosam maiores mollitia quam qui quod
+                            repellendus reprehenderit soluta suscipit totam voluptate!</p>
+
+
                 </div>
             </div>
 
@@ -206,7 +266,7 @@
 
 
     <!--FOOTER-->
-    <footer>
+    <footer id="footbg">
 
         <div class="inner">
             <ul class="share-group">
@@ -230,6 +290,13 @@
         </ul>
         <i class="fa fa-close fa-1x"></i>
     </div>
+
+    <!--<div class="qr">-->
+        <!--<div class="cricle">-->
+            <!--<i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>-->
+        <!--</div>-->
+
+    <!--</div>-->
 </div>
 </body>
 </html>

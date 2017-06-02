@@ -19,7 +19,7 @@ a{
     color: #fff;
 }
 
-i{
+i,s,b{
     font-style: normal;
 }
 
@@ -56,8 +56,8 @@ h1,h2{
 
 /*---main---*/
 
-.main-wrapper{
-    background: url(../img/banner.jpg) no-repeat right center fixed;
+#main-wrapper{
+    background: url(../img/banner.jpg) no-repeat top center fixed;
     background-size: cover;
     font-family: 'Segoe UI',"Microsoft YaHei", Helvetica, Arial, sans-serif;
     color: #fff;
@@ -109,7 +109,7 @@ ul li a:hover,nav ul li.active {
 
 #banner{
     height: 700px;
-    position: relative;
+    position: i;
     letter-spacing: 2px;
 
 }
@@ -128,10 +128,12 @@ ul li a:hover,nav ul li.active {
 #banner .inner .more{
     width: 300px;
     height: 100px;
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -150px;
+    /*position: absolute;*/
+    /*bottom: 30px;*/
+    /*left: 50%;*/
+    /*margin-left: -150px;*/
+    position: relative;
+    bottom: -120px;
 }
 
 
@@ -182,6 +184,7 @@ ul li a:hover,nav ul li.active {
     background-color: #023548;
 }
 
+
 .article-preview:nth-child(odd) {
     background: rgba(0,0,0,0.1);
 }
@@ -202,8 +205,10 @@ ul li a:hover,nav ul li.active {
 .text-section{
     width: 55%;
     position: relative;
-    top: 120px;
+    top: 80px;
     left: 50px;
+    /*margin-top:80px;*/
+    /*margin-left: 50px;*/
 }
 
 .text-section > *{
@@ -278,7 +283,7 @@ ul li a:hover,nav ul li.active {
 footer{
     height: 600px;
     text-align: center;
-    background: url(../img/banner.jpg) left bottom fixed;
+    background: url(../img/banner.jpg) no-repeat left bottom fixed;
     position: relative;
 }
 
@@ -335,5 +340,42 @@ footer .share-group{
     display: block;
 }
 
+#bg{
 
+    font-size:20px;
+
+    letter-spacing: 1px;
+    line-height: 50px;
+    color: #fff;
+}
+
+#sele {
+    background: transparent;
+    -webkit-appearance: none;
+    border: 0;
+    color: #fff;
+}
+
+
+
+/*.qr{*/
+    /*position: relative;*/
+    /*top: 100px;*/
+    /*right: 100px;*/
+    /*margin: 100px;*/
+/*}*/
+
+ .cricle{
+    display: block;
+    border: 2px solid #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.cricle i{
+    line-height:50px;
+    font-size: 32px;
+}
 
