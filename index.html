@@ -3,91 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Lucia's Blog</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <script src="js/main.js" type="text/javascript"></script>
     <script>
-        window.onload = function(){
+        window.onload = function() {
+            var navLis = $("nav_ul").children,
+                more = navLis[3];
 
-//           首页导航nav点击事件
-            var nav_ul = document.getElementById("nav_ul");
-            var lis = document.getElementById("nav_ul").getElementsByTagName("li");
 
-            for (var i = 0 ; i < lis.length;i++){
-                lis[i].onclick = function () {
-                   for( var j = 0; j< lis.length;j++){
-                       lis[j].className = '';
-                   }
-                   this.className = "active";
+            //点击更多事件弹出sidebar框
+            more.onclick = function (event) {
+                // 显示sidebar
+                $("sidebar").style.display = "block";
+                //点击sidebar 关闭按钮
+                var close_bar = $("sidebar").children[1];
+                close_bar.onclick = function () {
+                    $("sidebar").style.display = "none";
+                }
+                //阻止冒泡
+
+                var event = window.event;
+                if(event && event.stopPropagation)
+                {
+                    event.stopPropagation();
+                }else{
+                    event.cancelBubble = true;
                 }
 
-            }
-
-//            首页导航nav点击more打开sidebar
-
-            var sidebar = document.getElementById("sidebar");
-            var i_close = document.getElementById("sidebar").getElementsByTagName("i");
 
 
+                //点击sidebar 空白处 关闭按钮
 
-            lis[3].onclick = function() {
-                if (sidebar.style.display = "none") {
-                    sidebar.style.display = "block";
-                    i_close[0].onclick = function () {
-                        sidebar.style.display = "none";
+                document.onclick = function (event) {
+                    var event = event || window.event;
+                    //判断当前的对象
+                    var targetId = event.target ? event.target.id : event.srcElement.id;
+
+                    if (targetId != sidebar) {
+                        $("sidebar").style.display = "none";
+
+
                     }
-                }
-            }
-
-            // 更换背景
-            var mainbg = document.getElementById("main-wrapper");
-            var footbg = document.getElementById("footbg");
-
-            var sele = document.getElementById("sele");
-
-            sele.onchange = function () {
-                switch(this.value){
-                    case "1":
-                        mainbg.style.backgroundImage ="url(img/banner1.jpg)";
-                        footbg.style.backgroundImage ="url(img/banner1.jpg)";
-                        break;
-
-                    case "2":
-                        mainbg.style.backgroundImage ="url(img/banner2.jpg)";
-                        footbg.style.backgroundImage ="url(img/banner2.jpg)";
-                        break;
-
-                    case "3":
-                        mainbg.style.backgroundImage ="url(img/banner3.jpg)";
-                        footbg.style.backgroundImage ="url(img/banner3.jpg)";
-                        break;
-
-                    case "4":
-                        mainbg.style.backgroundImage ="url(img/banner4.jpg)";
-                        footbg.style.backgroundImage ="url(img/banner4.jpg)";
-                        break;
-
-                    default:
-                        mainbg.style.backgroundImage ="url(img/banner.jpg)";
-                        footbg.style.backgroundImage ="url(img/banner.jpg)"
                 }
             }
 
 
             
+            
+            //banner hr动画
+
+            var hrdiv = document.createElement("div");
+            var innerH1 = $("banner").children[0].children[0];
+            console.log(hrdiv);
+            console.log(innerH1);
+            innerH1.insertBefore(hrdiv);
+
+
+
         }
     </script>
 </head>
 <body>
 
+<!--main-wrapper = header + content + footer-->
 <div id="main-wrapper">
-    <!-- HEADER-->
+
+
+
+
+
+    <!--header = nav +  banner-->
+    <!--nav = logo + sidebar-->
+
     <header>
         <nav>
             <div class="logo">
                 <a href="#">Lucia.M</a>
+
             </div>
 
             <ul id="nav_ul">
@@ -104,23 +100,14 @@
                     <a href="#">更多</a>
                 </li>
             </ul>
-            
-            <div id="bg">
-                <select name="" id="sele" >
-                    <option value="0">BG TEST</option>
-                    <option value="1">bg one</option>
-                    <option value="2">bg two</option>
-                    <option value="3">bg three</option>
-                    <option value="4">bg four</option>
-                </select>
-            </div>
+
         </nav>
 
         <div id="banner" class="clearfix">
             <div class="inner">
-                <div class="hr"></div>
+                <!--<div class="hr"></div>-->
                 <h1>LUCIA.M</h1>
-                <div class="hr"></div>
+                <!--<div class="hr"></div>-->
                 <p class="sub-heading">扁平化博客--DEMO页</p>
                 <button>了解我</button>
 
