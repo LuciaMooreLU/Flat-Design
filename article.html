@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--以IE最新引擎渲染网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>文章页示例</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/data.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<!--main-wrapper = header + content + footer-->
+<div id="article" >
+
+    <!--header = nav +  banner-->
+    <!--nav = logo + sidebar-->
+
+    <header >
+        <nav>
+            <div class="logo">
+                <a href="#">Lucia.M</a>
+            </div>
+
+            <ul id="nav_ul">
+                <li >
+                    <a href="index.html">首页</a>
+                </li>
+                <li class="active">
+                    <a href="#">文章</a>
+                </li>
+                <li class="more">
+                    <a href="#">更多</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="banner" class="clearfix">
+            <div class="inner">
+                <div class="hr hr-left"></div>
+                <h1>LUCIA.M</h1>
+                <div class="hr hr-right"></div>
+
+
+            </div>
+
+
+        </div>
+    </header>
+
+
+<div class="middle_content">
+<div class="inner">
+    <div class="title">
+        <h1>文章页-示例</h1>
+        <p>编辑于XX年XX月XX日</p>
+    </div>
+    <div class="details clearfix">
+
+
+        <aside>
+            <ul id="list">
+
+            </ul>
+        </aside>
+        <article id="content">
+            <p>仅仅为示例，详细文章信息见<a href="http://localhost:4000/2016/11/23/Keepalived/" target="_blank" style="border: 1px solid skyblue; margin-left:3px;">请点击这里</a> </p>
+        </article>
+
+
+
+        <script>
+            window.onload = function () {
+                var listElement  = document.querySelector("#list");
+                for(var title in data)
+                {
+                    var liElement = document.createElement("li");
+                    liElement.setAttribute("data-title",title);
+                    liElement.innerHTML = title;
+                    /* liElement.createTextNode(title);*/
+                    listElement.appendChild(liElement);
+                }
+
+//            console.log(data);
+                var listElements = document.querySelectorAll("#list>li");
+                var listContent = document.querySelector("#content");
+                for(var i = 0;i<listElements.length; i++){
+                    listElements[i].addEventListener('click',function () {
+                        var title  = this.dataset['title'];
+                        listContent.innerHTML = data[title];
+                    })
+                }
+
+
+
+
+            };
+        </script>
+
+    </div>
+
+
+
+</div>
+
+</div>
+    <!--FOOTER-->
+    <footer class="article-footer">
+     <!--   <div class="inner">
+            <ul class="share-group">
+                <li><i class="fa fa-github fa-3x"></i></li>
+                <li><i class="fa fa-html5 fa-3x"></i></li>
+                <li><i class="fa fa-rss fa-3x" ></i></li>
+            </ul>
+            <div class="copy">
+                &copy Lucia.M
+            </div>
+        </div>-->
+    </footer>
+
+    <div id="mask">
+    </div>
+
+    <div id="sidebar">
+        <ul>
+            <li><a href="https://segmentfault.com/t/javascript"    target="_blank">SegmentFault</a></li>
+            <li><a href="https://juejin.im/welcome/frontend"   target="_blank">JueJin</a></li>
+            <li><a href="https://github.com"   target="_blank">GitHub</a></li>
+            <li><a href="http://www.zhangxinxu.com/wordpress/"   target="_blank">Zhang Xinxu's Bolg</a></li>
+            <li><a href="http://www.ruanyifeng.com/home.html"   target="_blank">Ruan Yifeng's Blog</a></li>
+        </ul>
+        <i class="fa fa-close fa-1x"></i>
+    </div>
+
+    <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true" id="scroll_top" ></i>
+
+
+
+</div>
+
+
+<script src="https://use.fontawesome.com/049448275f.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

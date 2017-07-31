@@ -1,4 +1,6 @@
+@charset "utf-8";
 /*公共类*/
+
 .clearfix:before, .clearfix:after{
     content: '';
     display: table;
@@ -12,6 +14,7 @@
 
 ul{
     margin: 0;
+    list-style: none;
 }
 
 a{
@@ -30,6 +33,7 @@ button{
     color: #eee;
     border-radius: 8px;
     cursor: pointer;
+    outline:none;
 }
 
 h1,h2{
@@ -37,6 +41,24 @@ h1,h2{
     letter-spacing: 2px;
 }
 
+/*animate 动画*/
+@keyframes hr {
+    from {width: 1%;}
+    to {width: 100%;}
+}
+
+
+@-webkit-keyframes  hr {
+    from {width: 1%;}
+    to {width: 100%;}
+}
+
+.hr-left,
+.hr-right{
+
+    animation:hr 3s;
+    -webkit-animation: hr 3s;
+}
 
 .hr{
     width: 100%;
@@ -44,6 +66,8 @@ h1,h2{
     background: #fff;
     margin: 20px auto;
 }
+
+
 
 
 .sub-heading{
@@ -54,26 +78,43 @@ h1,h2{
 
 
 
+html,body,#main-wrapper,#article{
+    width: 100%;
+    height: 100%;
+}
+
+
 /*---main---*/
 
-#main-wrapper{
+#main-wrapper,#article{
     background: url(../img/banner.jpg) no-repeat top center fixed;
     background-size: cover;
     font-family: 'Segoe UI',"Microsoft YaHei", Helvetica, Arial, sans-serif;
     color: #fff;
-    overflow: hidden;
+    /*overflow: scroll;*/
 }
+
+
+#article{
+    overflow: auto;
+}
+
+
 
 header{
     width:100%;
     height: 100%;
 }
 
+#article header{
+    height: 30%;
+}
 
 nav {
     height: 50px;
     background:rgba(0,0,0,0.1);
     color: #fff;
+  
 }
 
 .logo{
@@ -116,38 +157,144 @@ ul li a:hover,nav ul li.active {
 
 
 #banner{
-    height: 800px;
+    height: 100%;
     letter-spacing: 2px;
+
 
 }
 
-#banner .inner{
+
+
+#main-wrapper #banner .inner{
     max-width:300px;
     text-align: center;
     margin: 0 auto;
-    padding-top: 160px;
+    padding-top: 15%;
+    position: relative;
+    height: 100%;
+}
+
+#article #banner .inner{
+    max-width:300px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 #banner .inner button{
-    margin-top: 30px;
+    margin-top: 10%;
+    -webkit-transition: background   1s;
+    -moz-transition: background   1s;
+    -ms-transition: background   1s;
+    -o-transition: background  1s;
+    transition: background   1s;
 }
 
+#article #banner .inner h1{
+    text-align: center;
+    line-height: 2;
+    font-size: 36px;
+}
+
+
+
+#banner button:hover{
+    background-color: #49c3a7;
+}
+
+
 #banner .inner .more{
+    margin-top: 30%;
     width: 300px;
     height: 100px;
-    /*position: absolute;*/
-    /*bottom: 30px;*/
-    /*left: 50%;*/
-    /*margin-left: -150px;*/
-    position: relative;
-    bottom: -120px;
+    line-height:100px;
 }
 
 
 .inner .more i{
     display: block;
-    margin: 30px;
     cursor: pointer;
+
+}
+
+
+
+.middle_content .inner{
+    background: rgba(0,0,0,.3);
+    width: 760px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height: 900px;
+}
+
+.middle_content .title{
+    border-bottom: 1px dashed #49c3a7;
+    height: 75px;
+    max-height: 75px;
+    /*height: 8%;*/
+}
+
+.middle_content .title h1{
+    font-size: 26px;
+    line-height: 2;
+    font-family:"SimSun";
+    text-align: center;
+}
+.middle_content .title p{
+    text-align: right;
+    margin:0;
+    padding-right: 12px;
+    padding-bottom: 5px;
+}
+
+.middle_content .details{
+    height: 825px;
+    padding: 10px;
+
+
+}
+
+.middle_content .details > * {
+    height: 96%;
+}
+
+.middle_content .details aside{
+    width:220px;
+    float: left;
+    border-right: 2px solid #92cabd;
+    font-size: 20px;
+    line-height: 2;
+    background-color: rgba(0,0,0,.25);
+    text-align: left;
+
+}
+
+.details aside ul li{
+
+    cursor: pointer;
+    margin: 10px;
+
+}
+
+
+
+.middle_content .details article{
+    margin-left:220px;
+    background: rgba(255,255,255,0.18);
+    margin-top: 0;
+    padding: 50px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: auto;
+    text-shadow: .5px .5px .5px #000;
+}
+
+
+
+
+#content p{
+    margin:0;
 }
 
 
@@ -169,6 +316,7 @@ ul li a:hover,nav ul li.active {
 .wrapper .hr{
     width: 60%;
     background: rgba(0,0,0,0.05);
+
 }
 .icon-group{
     padding: 20px;
@@ -182,14 +330,25 @@ ul li a:hover,nav ul li.active {
     border: 1px solid #ccc;
     transform: rotate(45deg);
     margin: 15px;
-    vertical-align: baseline;
+    /*vertical-align: middle;*/
+
 }
 
+.icon-group > .icon > *{
+    transform: rotate(-45deg);
+    /*text-align: center;*/
+    vertical-align: middle;
+}
+/*.fa-html5,
+.fa-css3,
+.fa-coffee{
 
+}*/
 
 .blue-section{
     background-color: #023548;
 }
+
 
 
 .article-preview:nth-child(odd) {
@@ -199,27 +358,40 @@ ul li a:hover,nav ul li.active {
 .article-preview > div{
     float: left;
     font-size: 0;
+
 }
 
 .article-preview .img-section {
+
     width: 45%;
+    overflow: hidden;
+
 }
 
 .img-section img{
+
     width: 100%;
+
+ 
 }
 
 .text-section{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 55%;
-    position: relative;
-    top: 80px;
-    left: 50px;
+    padding: 30px;
+
+    /*position: relative;*/
+    /*top: 80px;*/
+    /*left: 50px;*/
     /*margin-top:80px;*/
     /*margin-left: 50px;*/
 }
 
 .text-section > *{
     max-width: 90%;
+
 }
 
 .text-section h2{
@@ -229,6 +401,8 @@ ul li a:hover,nav ul li.active {
 
 .text-section p{
     font-size: 16px;
+    vertical-align:middle;
+    text-indent: 1em;
 }
 
 
@@ -287,16 +461,20 @@ ul li a:hover,nav ul li.active {
     background: rgba( 0, 0, 0, 0.30);
 }
 
-footer{
-    height: 600px;
+#main-wrapper footer{
+    height: 100%;
     text-align: center;
     background: url(../img/banner.jpg) no-repeat left bottom fixed;
     position: relative;
 }
 
+.article-footer{
+    height: 30%;
+}
 
 
-footer .inner{
+
+ footer .inner{
     position: absolute;
     bottom: 0;
     height: 300px;
@@ -320,12 +498,17 @@ footer .share-group{
 #sidebar{
     position: fixed;
     top:0;
-    right:0;
+    right:-300px;
+    bottom:0;
     height: 100%;
     width: 300px;
     background: #1E8A7D;
     letter-spacing: 2px;
-    display: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: al 0.5s;
+    transition: all 0.5s;
 }
 
 #sidebar ul{
@@ -385,4 +568,29 @@ footer .share-group{
     line-height:50px;
     font-size: 32px;
 }
+
+#mask{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background: rgba(0,0,0,0.5);
+}
+
+/*.scroll-top{*/
+    /*display: block;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+/*}*/
+
+#scroll_top{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: none;
+}
+
+
 

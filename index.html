@@ -2,79 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--以IE最新引擎渲染网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Lucia's Blog</title>
+
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="js/main.js" type="text/javascript"></script>
-    <script>
-        window.onload = function() {
-            var navLis = $("nav_ul").children,
-                more = navLis[3];
-
-
-            //点击更多事件弹出sidebar框
-            more.onclick = function (event) {
-                // 显示sidebar
-                $("sidebar").style.display = "block";
-                //点击sidebar 关闭按钮
-                var close_bar = $("sidebar").children[1];
-                close_bar.onclick = function () {
-                    $("sidebar").style.display = "none";
-                }
-                //阻止冒泡
-
-                var event = window.event;
-                if(event && event.stopPropagation)
-                {
-                    event.stopPropagation();
-                }else{
-                    event.cancelBubble = true;
-                }
-
-
-
-                //点击sidebar 空白处 关闭按钮
-
-                document.onclick = function (event) {
-                    var event = event || window.event;
-                    //判断当前的对象
-                    var targetId = event.target ? event.target.id : event.srcElement.id;
-
-                    if (targetId != sidebar) {
-                        $("sidebar").style.display = "none";
-
-
-                    }
-                }
-            }
-
-
-            
-            
-            //banner hr动画
-
-            var hrdiv = document.createElement("div");
-            var innerH1 = $("banner").children[0].children[0];
-            console.log(hrdiv);
-            console.log(innerH1);
-            innerH1.insertBefore(hrdiv);
-
-
-
-        }
-    </script>
 </head>
 <body>
 
 <!--main-wrapper = header + content + footer-->
 <div id="main-wrapper">
-
-
-
-
 
     <!--header = nav +  banner-->
     <!--nav = logo + sidebar-->
@@ -83,7 +24,6 @@
         <nav>
             <div class="logo">
                 <a href="#">Lucia.M</a>
-
             </div>
 
             <ul id="nav_ul">
@@ -91,12 +31,9 @@
                     <a href="#">首页</a>
                 </li>
                 <li>
-                    <a href="#">文章</a>
+                    <a href="article.html">文章</a>
                 </li>
-                <li>
-                    <a href="#">背景</a>
-                </li>
-                <li>
+                <li class="more">
                     <a href="#">更多</a>
                 </li>
             </ul>
@@ -105,14 +42,13 @@
 
         <div id="banner" class="clearfix">
             <div class="inner">
-                <!--<div class="hr"></div>-->
+                <div class="hr hr-left"></div>
                 <h1>LUCIA.M</h1>
-                <!--<div class="hr"></div>-->
-                <p class="sub-heading">扁平化博客--DEMO页</p>
-                <button>了解我</button>
+                <div class="hr hr-right"></div>
+                <p class="sub-heading">扁平化博客&#45;&#45;DEMO页</p>
+                <button type="button" onclick="window.open('https://github.com/LuciaMooreLU')">了解我</button>
 
                 <div class="more">
-                    <span>LEARN MORE</span>
                     <i class="fa fa-angle-double-down fa-2x"></i>
                 </div>
 
@@ -122,6 +58,7 @@
         </div>
     </header>
 
+
     <!-- CONTENT -->
     <div class="content">
         <section class="green-section">
@@ -129,15 +66,15 @@
                 <div>
                     <h2>Flat-Design</h2>
                     <div class="hr"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. !</p>
+                    <p>HTML5 &nbsp; &nbsp; + &nbsp;&nbsp; CSS3 &nbsp;&nbsp; + &nbsp;&nbsp; JavaScript &nbsp;&nbsp;</p>
                 </div>
 
                 <div class="icon-group">
                     <span class="icon">
-                        <i class="fa fa-envira fa-2x"></i>
+                        <i class="fa fa-html5 fa-2x"></i>
                     </span>
                     <span class="icon">
-                        <i class="fa fa-snowflake-o fa-2x"></i>
+                        <i class="fa fa-css3 fa-2x"></i>
                     </span>
                     <span class="icon">
                         <i class="fa fa-coffee fa-2x"></i>
@@ -149,20 +86,11 @@
         <section class="blue-section ">
             <div class="article-preview clearfix">
                 <div class="img-section">
-                    <img src="img/pic01.jpg" alt="">
+                    <img src="http://7te9fe.com1.z0.glb.clouddn.com/bgimg_3.jpg" alt="">
                 </div>
                 <div class="text-section">
-                    <h2>TOOL LIST</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, accusantium aperiam
-                        asperiores consequuntur dolores esse et explicabo laboriosam maiores mollitia quam qui quod
-                        repellendus reprehenderit soluta suscipit totam voluptate!</p>
-
-                    <span class="qr">
-                        <s class="cricle">
-                            <i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>
-                        </s>
-                    </span>
-
+                    <h2>图片展示列</h2>
+                    <p>鲸目属于脊索动物门，脊椎动物亚门，哺乳纲，真兽亚纲，包含了大约98种生活在海洋、河流中的胎生哺乳动物。中国海域就有30余种。鲸目的所有种类中除几种生活在淡水外，其他均栖息于海洋</p>
 
                 </div>
             </div>
@@ -170,34 +98,23 @@
             <div class="article-preview clearfix">
 
                 <div class="text-section">
-                    <h2>标题标题</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eaque esse laudantium modi
-                        placeat
-                        repellendus repudiandae! Asperiores corporis doloribus iste molestias mollitia quis sapiente
-                        similique! Blanditiis dignissimos eveniet ipsa omnis.</p>
-
-                    <span class="qr">
-                        <s class="cricle">
-                            <i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>
-                        </s>
-                    </span>
+                    <h2>图片展示列</h2>
+                    <p>猎狗哺乳动物， 用于追猎的狗，具下垂的大耳朵、深沉的叫声和利用嗅迹跟踪猎物等的本领。格力犬、细狗、灵缇犬、拉布拉多、金毛寻猎犬等都属于猎犬</p>
                 </div>
 
                 <div class="img-section">
-                    <img src="img/pic02.jpg" alt="">
+                    <img src="http://7te9fe.com1.z0.glb.clouddn.com/bgimg_16.jpg" alt="">
                 </div>
             </div>
 
             <div class="article-preview clearfix">
                 <div class="img-section">
-                    <img src="img/pic03.jpg" alt="">
+                    <img src="http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg" alt="">
                 </div>
                 <div class="text-section">
 
-                        <h2>标题标题</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus, accusantium aperiam
-                            asperiores consequuntur dolores esse et explicabo laboriosam maiores mollitia quam qui quod
-                            repellendus reprehenderit soluta suscipit totam voluptate!</p>
+                    <h2>图片展示列</h2>
+                    <p>象，通称大象，是目前陆地上最大的哺乳动物，属于长鼻目，只有一科两属三种，即象科（学名：Elephantidae），非洲象属和亚洲象属。广泛分布在非洲撒哈拉沙漠以南和南亚及东南亚以至中国南部边境的热带及亚热带地区</p>
 
 
                 </div>
@@ -207,9 +124,9 @@
         </section>
 
 
-        <section class="purple-section ">
+      <!--  <section class="purple-section ">
             <div class="heading-wrapper">
-                <h2>又一个标题</h2>
+                <h2>项目展示列</h2>
                 <div class="hr"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eum iste quibusdam quod.
                     Corporis,
@@ -248,18 +165,17 @@
 
             </div>
 
-        </section>
+        </section>-->
     </div>
 
 
     <!--FOOTER-->
-    <footer id="footbg">
-
+    <footer>
         <div class="inner">
             <ul class="share-group">
                 <li><i class="fa fa-github fa-3x"></i></li>
                 <li><i class="fa fa-html5 fa-3x"></i></li>
-                <li><i class="fa fa-rss fa-3x" ></i></li>
+                <li><i class="fa fa-rss fa-3x"></i></li>
             </ul>
             <div class="copy">
                 &copy Lucia.M
@@ -267,23 +183,27 @@
         </div>
     </footer>
 
+    <div id="mask">
+    </div>
+
     <div id="sidebar">
         <ul>
-            <li><a href="#">Lorem ipsum1.</a></li>
-            <li><a href="#">Lorem ipsum2.</a></li>
-            <li><a href="#">Lorem ipsum3.</a></li>
-            <li><a href="#">Lorem ipsum4.</a></li>
-            <li><a href="#">Lorem ipsum5.</a></li>
+            <li><a href="https://segmentfault.com/t/javascript" target="_blank">SegmentFault</a></li>
+            <li><a href="https://juejin.im/welcome/frontend" target="_blank">JueJin</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="http://www.zhangxinxu.com/wordpress/" target="_blank">Zhang Xinxu's Bolg</a></li>
+            <li><a href="http://www.ruanyifeng.com/home.html" target="_blank">Ruan Yifeng's Blog</a></li>
         </ul>
         <i class="fa fa-close fa-1x"></i>
     </div>
 
-    <!--<div class="qr">-->
-        <!--<div class="cricle">-->
-            <!--<i class="fa fa-qrcode fa-2x" aria-hidden="true"></i>-->
-        <!--</div>-->
+    <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true" id="scroll_top"></i>
 
-    <!--</div>-->
+
 </div>
+
+
+<script src="https://use.fontawesome.com/049448275f.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>
